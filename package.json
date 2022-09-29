@@ -1,0 +1,25 @@
+{
+  "name": "@this/cobra-framework-multitheme-plugin",
+  "version": "1.0.1",
+  "author": "THIS GmbH",
+  "repository": "https://bitbucket.org/this-work/this.cobra-framework/src/master/README.md",
+  "description": "Cobra-Framework Multitheme nuxt 2.13+ integration",
+  "keywords": [
+    "scss",
+    "vue",
+    "nuxt",
+    "cobra",
+    "js",
+    "html",
+    "theme",
+    "plugin",
+    "framework"
+  ],
+  "license": "MIT",
+  "files": [
+    "nuxt"
+  ],
+  "dependencies": {
+    "@this/cobra-framework": "^0.1.75"
+  }
+}
