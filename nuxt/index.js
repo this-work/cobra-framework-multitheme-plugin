@@ -28,7 +28,7 @@ export default function(moduleOptions) {
      */
     this.nuxt.hook('webpack:config', webpackConfigs => {
 
-        nuxtWebpackConfig = webpackConfigs[0];
+        nuxtWebpackConfig = _.cloneDeep(webpackConfigs[0]);
 
     });
 
