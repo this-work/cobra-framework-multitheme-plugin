@@ -1,6 +1,6 @@
 {
   "name": "@this/cobra-framework-multitheme-plugin",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "THIS GmbH",
   "repository": "https://bitbucket.org/this-work/this.cobra-framework/src/master/README.md",
   "description": "Cobra-Framework Multitheme nuxt 2.13+ integration",
@@ -20,6 +20,6 @@
     "nuxt"
   ],
   "dependencies": {
-    "@this/cobra-framework": "^0.1.75"
+      "@this/cobra-framework": "git+https://bitbucket.org/this-work/cobra-framework.git#0.2.0"
   }
 }
