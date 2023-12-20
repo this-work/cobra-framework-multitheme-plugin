@@ -1,7 +1,7 @@
 /**
  * Cobra-Framework Multitheme nuxt 2.13+ integration
  *
- * Version 1.0.0
+ * Version 1.0.1
  * Author Tobias Wöstmann
  *
  */
@@ -47,6 +47,26 @@ export default function(moduleOptions) {
             compiler.run((err, stats) => {});
         });
 
+    });
+
+
+    /**
+     * Add the Multitheme Plugin
+     */
+    const multithemeOptions = {
+        'path': 'css',
+        'identificationAttribute': 'data-layout-name',
+        'defaultTheme': defaultTheme,
+        'additionalThemes': additionalThemes,
+        ...nuxtConfig.multitheme,
+        ...moduleOptions
+    };
+
+
+    this.addPlugin({
+        src: path.join(__dirname, 'plugin.js'),
+        fileName: `this/multitheme.js`,
+        options: multithemeOptions
     });
 
 }
