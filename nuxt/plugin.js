@@ -11,6 +11,8 @@ export default ({}, inject) => {
 
     inject('multitheme', {
 
+        activeTheme: null,
+
         removeThemeStyles() {
             const elements = document.querySelectorAll('[' + options.identificationAttribute + ']');
             elements.forEach(element => {
@@ -20,11 +22,15 @@ export default ({}, inject) => {
         },
 
         injectThemeStyles(theme) {
+            if (theme === this.activeTheme) {
+                return;
+            }
             this.removeThemeStyles();
             if (theme && theme !== options.defaultTheme) {
                 this.addThemeStyleToDom(theme);
                 this.addThemeStyleToDom(theme, options.fontSuffix);
             }
+            this.activeTheme = theme;
         },
 
         addThemeStyleToDom(theme, suffix = '') {
