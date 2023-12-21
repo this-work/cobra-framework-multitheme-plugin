@@ -58,6 +58,7 @@ export default function(moduleOptions) {
         'identificationAttribute': 'data-layout-name',
         'defaultTheme': defaultTheme,
         'additionalThemes': additionalThemes,
+        'fontSuffix': '-font',
         ...nuxtConfig.multitheme,
         ...moduleOptions
     };
