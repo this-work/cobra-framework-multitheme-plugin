@@ -19,21 +19,27 @@ export default ({}, inject) => {
                 element.disabled = true;
                 element.remove();
             });
+            this.activeTheme = null;
         },
 
         injectThemeStyles(theme) {
-            if (theme === this.activeTheme) {
-                return;
+
+            if (this.activeTheme) {
+                this.removeThemeStyles();
             }
-            this.removeThemeStyles();
+
             if (theme && theme !== options.defaultTheme) {
                 this.addThemeStyleToDom(theme);
                 this.addThemeStyleToDom(theme, options.fontSuffix);
             }
-            this.activeTheme = theme;
+
         },
 
         addThemeStyleToDom(theme, suffix = '') {
+
+            if (theme === this.activeTheme) {
+                return;
+            }
 
             const element = document.createElement('link');
             element.href = `/${options.path}/${theme}${suffix}.css`;
@@ -41,6 +47,7 @@ export default ({}, inject) => {
             element.setAttribute(options.identificationAttribute, theme);
 
             document.documentElement.append(element);
+            this.activeTheme = theme;
 
         }
     });
