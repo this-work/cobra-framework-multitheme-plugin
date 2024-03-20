@@ -24,6 +24,10 @@ export default ({}, inject) => {
 
         injectThemeStyles(theme) {
 
+            if (theme === this.activeTheme) {
+                return;
+            }
+
             if (this.activeTheme) {
                 this.removeThemeStyles();
             }
@@ -36,10 +40,6 @@ export default ({}, inject) => {
         },
 
         addThemeStyleToDom(theme, suffix = '') {
-
-            if (theme === this.activeTheme) {
-                return;
-            }
 
             const element = document.createElement('link');
             element.href = `/${options.path}/${theme}${suffix}.css`;
